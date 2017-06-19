@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../swiper.min.css"/>
+		<script src="../swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			html{
+				font-size: 62.5%;
+			}
+			body{
+				background: #ccc;
+			}
+			#box{
+				width: 1400px;
+				margin: 0 auto;
+				padding: 1% 0;
+			}
+			.swiper-slide img{
+				width: 100%;
+				height: 400px;
+			}
+			#banner{
+				display: flex;
+				justify-content: space-around;
+				background: #fff;
+				padding: 1%;
+				margin: 1% 0;
+			}
+			#banner img{
+				max-width: 40%;
+			}
+			#banner img:hover{
+				transform: translateY(-5px);
+				box-shadow:3px 5px 10px #000;
+			}
+			#banner_txt {
+				width: 55%;
+				line-height: 50px;
+			}
+			#banner_txt h1 span{
+				background: mediumpurple;
+				color: #fff;
+				margin-left: 0.5%;
+				font-size: 1rem;
+			}
+			#banner_txt p{
+				color: #666;
+			}
+			#banner_txt  img{
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			#banner_txt u{
+				text-decoration: none;
+			}
+			#banner_txt button{
+				color: #fff;
+				background: pink;
+				border: none;
+				padding: 1% 2%;
+				margin-right: 2%;
+			}
+			#banner_txt a:nth-child(2){
+				display: inline-block;
+				border: 10px solid transparent;
+				border-right: 10px solid #ccc;
+				position: absolute;
+				top: 15px;
+			}
+			#banner_txt a:nth-child(3){
+				display: inline-block;
+				border: 10px solid transparent;
+				border-right: 10px solid #fff;
+				position: absolute;
+				top: 15px;
+				left: 101px;
+			}
+			#banner_txt  b{
+				padding: 1% 2%;
+				border: 1px solid #ccc;
+				margin-left:20px;
+			}
+			nav{
+				background:#FF4163;
+				color: #fff;
+			}
+			nav ul{
+				width: 60%;
+				display: flex;
+				justify-content: space-between;
+			}
+			nav li{
+				width: 14%;
+				padding: 0.8% 0;
+				text-align: center;
+			}
+			.bg{
+				background: darkred;
+			}
+			main,#main_Context,#videl,#puBuLiu,#intro,#review{
+				background: #fff;
+				margin: 1% 0;
+				padding: 1% ;
+			}
+			h2{
+				padding-bottom: 1% ;
+			}
+			h2 span{
+				float: right;
+				color: #ccc;
+				font-size: 0.8rem;
+			}
+			.main_Ul {
+				line-height: 25px;
+				display: flex;
+				justify-content: space-around;
+				margin-bottom: 1%;
+			}
+			.main_Ul li{
+				width: 33%;
+				border: 1px solid #eee;
+			}
+			.main_Ul li img:hover{
+				transform: scale(1.2);
+			}
+			.main_Ul h3{
+				margin-left: 3%;
+			}
+			.img,.main_Ul h3 span{
+				float: right;
+				color: #ccc;
+			}
+			.img{
+				margin-top: 5px;
+			}
+			.main_Ul li>img{
+				width: 100%;
+			}
+			.main_Ul img{
+				vertical-align: middle;
+			}
+			.speak{
+				margin: 0 auto;
+				width:92%;
+				display: flex;
+				justify-content: space-between;
+				color: #ccc;
+			}
+			.speak b{
+				color: deeppink;
+				font-size: 1.5rem;
+			}
+			#videl p{
+				text-align: center;
+				font-weight: bold;
+				color: #666;
+			}
+			table{
+				width: 1000px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			tr:first-child{
+				background: #eee;
+			}
+			td{
+				padding: 1% 2%;
+			}
+			#ul_But{
+				display: flex;
+				justify-content: space-between;
+			}
+			.user_review{
+				width: 40%;
+				height: 15px;
+				display: flex;
+				justify-content: space-between;
+			}
+			#review button{
+				color: #fff;
+				background: pink;
+				border: none;
+				font-size: 1rem;
+			}
+			#review>p{
+				background: #eee;
+				text-align: center;
+				margin: 1% 0;
+				padding: 0.5% 0;
+			}
+			#content{
+				display: flex;
+				justify-content: space-between;
+			}
+			#content>img{
+				width: 8%;
+				height: 15%;
+			}
+			#text{
+				width: 90%;
+				line-height: 20px;
+			}
+			#text h5 img{
+				vertical-align: middle;
+			}
+			.user_t{
+				display: flex;
+				justify-content: space-between;
+				color: #ccc;
+			}
+			.user_t img{
+				width: 100%;
+			}
+			#fix{
+				position: fixed;
+				bottom: 10%;
+				right: -20px;				
+			}
+			#fix img{
+				width: 70%;
+			}
+			footer ul{
+				width: 30%;
+				display: flex;
+				justify-content: space-around;
+				margin: 0 auto;
+				color: #999;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="swiper-container">
+				<div class="swiper-wrapper"> 
+					<div class="swiper-slide">
+						<img src="img/ban1.jpg"/>
+					</div>
+					<div class="swiper-slide">
+						<img src="img/ban2.jpg"/>
+					</div>
+					<div class="swiper-slide">
+						<img src="img/20170310165515244.jpg"/>
+					</div>
+				</div>
+				
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+		
+				<div class="swiper-pagination"></div>
+			</div>
+			<div id="banner">
+				<img src="img/2016092615225164056937x600_400_1.jpg"/>
+				<div id="banner_txt">
+					<h1>HongKong婚纱礼服<span style="background: paleturquoise;">企</span><span>荐</span></h1>
+					<p>
+						<img src="img/2017-06-12_215228.png"/><u>人气54643</u>
+						<img src="img/2017-06-12_215303.png"/><u>评论2355</u>
+						<img src="img/2017-06-12_215324.png"/><u>作品</u>
+					</p>
+					<p>地址 &nbsp;[海港区]新宝街(四道桥汽车入帐扣)114号-130号南楼  &nbsp;
+						<img src="img/2017-06-12_215351.png"/>
+						<span style="color: deeppink;">[地图]</span>
+						<img src="img/2017-06-12_215418.png"/>免费发送到手机
+					</p>
+					<p>电话 &nbsp;13533564657
+						<img src="img/2017-06-12_215441.png"/ style="width: 7%;margin-left: 20px;;">
+					</p>
+					<p>
+						<img src="img/2017-06-12_215459.png"/><u>分享</u>
+						<img src="img/2017-06-12_215027.png"/><u>收藏</u>
+						<img src="img/2017-06-12_215518.png"/><u>私信</u>
+					</p>
+					<p style="position: relative;"><button>预约看书</button><a></a><a></a><b>网络预约即送一款时尚7寸摆台</b></p>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li class="bg">首页</li>
+					<li>精品折扣</li>
+					<li>作业精选</li>
+					<li>视频展示</li>
+					<li>网友点评</li>
+					<li>公司简介</li>
+					<li>实景展示</li>
+				</ul>
+			</nav>
+			<main>
+				<h2>精品折扣<span>更多</span></h2>
+				<ul class="main_Ul">
+					<li>
+						<img src="img/2017052015504378028056x450_300_1.jpg"/>
+						<h3>
+							<img src="img/2017-06-12_215135.png"/>花瓣特惠套系
+						</h3>
+						<div class="speak">
+							<b>￥3999</b><del>￥5365</del>
+							<p>
+								<img src="img/2017-06-12_215027.png"/>356
+							</p>
+						</div>
+					</li>
+					<li>
+						<img src="img/2017052015462957346851x450_300_1.jpg"/>
+						<h3>
+							<img src="img/2017-06-12_215135.png"/>花瓣特惠套系
+						</h3>
+						<div class="speak">
+							<b>￥4599</b><del>￥5365</del>
+							<p>
+								<img src="img/2017-06-12_215027.png"/>356
+							</p>
+						</div>
+					</li>
+					<li>
+						<img src="img/2017052015414227424727x450_300_1.jpg"/>
+						<h3>
+							<img src="img/2017-06-12_215135.png"/>花瓣特惠套系
+						</h3>
+						<div class="speak">
+							<b>￥65699</b><del>￥5365</del>
+							<p>
+								<img src="img/2017-06-12_215027.png"/>356
+							</p>
+						</div>
+					</li>
+				</ul>
+				<ul class="main_Ul">
+					<li>
+						<img src="img/2017052015380813128708x450_300_1.jpg"/>
+						<h3>
+							<img src="img/2017-06-12_215135.png"/>花瓣特惠套系
+						</h3>
+						<div class="speak">
+							<b>￥4672</b><del>￥5365</del>
+							<p>
+								<img src="img/2017-06-12_215027.png"/>356
+							</p>
+						</div>
+					</li>
+					<li>
+						<img src="img/2017052015334336777997x450_300_1.jpg"/>
+						<h3>
+							<img src="img/2017-06-12_215135.png"/>花瓣特惠套系
+						</h3>
+						<div class="speak">
+							<b>￥86744</b><del>￥5365</del>
+							<p>
+								<img src="img/2017-06-12_215027.png"/>356
+							</p>
+						</div>
+					</li>
+					<li>
+						<img src="img/2017052015281796561676x450_300_1.jpg"/>
+						<h3>
+							<img src="img/2017-06-12_215135.png"/>花瓣特惠套系
+						</h3>
+						<div class="speak">
+							<b>￥54546</b><del>￥56565</del>
+							<p>
+								<img src="img/2017-06-12_215027.png"/>356
+							</p>
+						</div>
+					</li>
+				</ul>
+			</main>
+			<div id="main_Context">
+				<h2>作品精选</h2>
+				<ul class="main_Ul">
+					<li>
+						<img src="img/2016100615082088171377x450_450_1.jpg"/>
+						<h3>【客片欣赏】没有样片/没有模特才值得一</h3>
+					</li>
+					<li>
+						<img src="img/2016092910003690112495x450_450_1.jpg"/>
+						<h3>【客片欣赏】糖果系粉色大片<span>2464</span><img src="img/2017-06-12_215100.png" class="img"/></h3>
+					</li>
+					<li>
+						<img src="img/2016092710251589712896x450_450_1.jpg"/>
+						<h3>【客片欣赏】你没有看错，就是这么仙儿</h3>
+					</li>
+				</ul>
+				<ul class="main_Ul">
+					<li>
+						<img src="img/2016092615225164056937x450_450_1.jpg"/>
+						<h3>【客片欣赏】没有样片/没有模特才值得一</h3>
+					</li>
+					<li>
+						<img src="img/2016092610045883269313x450_450_1.jpg"/>
+						<h3>【客片欣赏】糖果系粉色大片</h3>
+					</li>
+					<li>
+						<img src="img/2016092210464343502118x450_450_1.jpg"/>
+						<h3>【客片欣赏】你没有看错，就是这么仙儿</h3>
+					</li>
+				</ul>
+				<ul class="main_Ul">
+					<li>
+						<img src="img/2016092209503038823819x450_450_1.jpg"/>
+						<h3>【客片欣赏】没有样片/没有模特才值得一<span>2464</span><img src="img/2017-06-12_215100.png" class="img"/></h3>
+					</li>
+					<li>
+						<img src="img/2016092110145242809962x450_450_1.jpg"/>
+						<h3>光环之后<span>2464</span><img src="img/2017-06-12_215100.png" class="img"/></h3>
+					</li>
+					<li>
+						<img src="img/2016081111255625235849x450_450_1.jpg"/>
+						<h3>一世繁华<span>2464</span><img src="img/2017-06-12_215100.png" class="img"/></h3>
+					</li>
+				</ul>
+				<ul class="main_Ul">
+					<li>
+						<img src="img/2016081110442311524082x450_450_1.jpg"/>
+						<h3>执子天涯<span>2464</span><img src="img/2017-06-12_215100.png" class="img"/></h3>
+					</li>
+					<li>
+						<img src="img/2016081110424560005942x450_450_1.jpg"/>
+						<h3>与手偕老<span>2464</span><img src="img/2017-06-12_215100.png" class="img"/></h3>
+					</li>
+					<li>
+						<img src="img/2016080609063569145059x450_450_1.jpg"/>
+						<h3>十里挑花<span>2464</span><img src="img/2017-06-12_215100.png" class="img"/></h3>
+					</li>
+				</ul>
+			</div>
+			<div id="videl">
+				<h2>视频欣赏<span>更多</span></h2>
+				<p>花瓣影视...</p>
+			</div>
+			<div id="puBuLiu">
+				<h2>预约记录</h2>
+				<table>
+					<tr>
+						<td>联系电话</td>
+						<td>预约类型</td>
+						<td>预约状态</td>
+						<td>预约时间</td>
+					</tr>
+					<tr>
+						<td>123****9879</td>
+						<td>在线预约</td>
+						<td>已经预约</td>
+						<td>2017-05-04</td>
+					</tr>
+					<tr>
+						<td>123****9879</td>
+						<td>在线预约</td>
+						<td>已经预约</td>
+						<td>2017-05-04</td>
+					</tr>
+					<tr>
+						<td>123****9879</td>
+						<td>在线预约</td>
+						<td>已经预约</td>
+						<td>2017-05-04</td>
+					</tr>
+					<tr>
+						<td>123****9879</td>
+						<td>在线预约</td>
+						<td>已经预约</td>
+						<td>2017-05-04</td>
+					</tr>
+					<tr>
+						<td>123****9879</td>
+						<td>在线预约</td>
+						<td>已经预约</td>
+						<td>2017-05-04</td>
+					</tr>
+					<tr>
+						<td>123****9879</td>
+						<td>在线预约</td>
+						<td>已经预约</td>
+						<td>2017-05-04</td>
+					</tr>
+					<tr>
+						<td>123****9879</td>
+						<td>在线预约</td>
+						<td>已经预约</td>
+						<td>2017-05-04</td>
+					</tr>
+					<tr>
+						<td>123****9879</td>
+						<td>在线预约</td>
+						<td>已经预约</td>
+						<td>2017-05-04</td>
+					</tr>
+					<tr>
+						<td>123****9879</td>
+						<td>在线预约</td>
+						<td>已经预约</td>
+						<td>2017-06-15</td>
+					</tr>
+					<tr>
+						<td>137****6067</td>
+						<td>在线预约</td>
+						<td>已经预约</td>
+						<td>2017-04-07</td>
+					</tr>
+				</table>
+			</div>
+			<div id="intro">
+				<h2>公司简介</h2>
+				<p>花瓣婚纱摄影工作室，现已拥有3600平方米超大影棚。韩版婚纱一时性拍摄满意后全付款、全程一对一服务、无任何后期消费等特色和优势的服务，受到了社会各界与广大新人的认可和赞同。2015年是花瓣风格年，所有的婚纱照都在延续风格，我们做的是创新，花瓣摄影让幸福触手可及，期待创新，期待属于你自己的风格....。<br />
+					品牌简介4_01品牌才是硬道理
+				</p>
+			</div>
+			<div id="review">
+				<h2>网友点评</h2>
+				<div id="ul_But">
+					<ul class="user_review">
+						<li style="background: darkred;color: #fff;">全部</li>
+						<li>好评(2334)</li>
+						<li>中评(34)</li>
+						<li>差评(0)</li>
+						<li>有图(456)</li>
+						<li>晒单(35)</li>
+					</ul>
+					<button>我要点评</button>
+				</div>
+				<p>温馨提示：关于HongKong婚纱影视点评仅供参考，不作为预定及评判商家好坏的依据</p>
+				<div id="content">
+					<img src="img/2017052015414227424727x450_300_1.jpg"/>
+					<div id="text">
+						<h5>jackie chan <img src="img/2017-06-12_214939.png"/></h5>
+						<h5>经过朋友的介绍选择花瓣，果真没选错，从接待打偶安装等一系列的的服务，技术特是一级棒。到学门手机发热基带，造型师超级负责任，做的造型衣服都很喜欢，把我们拍的漂漂亮亮的。以后你也来这里拍吧！</h5>
+						<p style="color: #ccc;">2017-04-15</p>
+						<ul  class="user_t">
+							<li>
+								<img src="img/2016071817441011x300_300_0.jpg"/>
+							</li>
+							<li>
+								<img src="img/2016071817444327x300_300_0.jpg"/>
+							</li>
+							<li>
+								<img src="img/2016071817444470x300_300_0.jpg"/>
+							</li>
+							<li>
+								<img src="img/2016071817444661x300_300_0.jpg"/>
+							</li>
+							<li>
+								<img src="img/2016071817444754x300_300_0.jpg"/>
+							</li>
+							<li>
+								<img src="img/2016071817444951x300_300_0.jpg"/>
+							</li>
+						</ul>
+						<ul class="user_t" style="width: 30%;">
+							<li>套系价格：5999元</li>
+							<li>造型数量：6个</li>
+							<li>拍摄数量：140个</li>
+						</ul>
+						<ul class="user_t" style="width: 19%;">
+							<li>摄影师:深资摄影师</li>
+							<li>化妆师：资深化妆师</li>
+						</ul>
+						<p style="float: right;">查看更多评论(4657)</p>
+					</div>
+				</div>
+			</div>
+			<ul id="fix">
+				<li>
+					<img src="img/2017-06-12_214756.png"/>
+				</li>
+				<li>
+					<img src="img/2017-06-12_214827.png"/>
+				</li>
+				<li>
+					<img src="img/2017-06-12_214855.png"/>
+				</li>
+				<li>
+					<img src="img/2017-06-12_214916.png"/>
+				</li>
+			</ul>
+			<footer>
+				<ul>
+					<li>&copy;2008-2015 Web11结婚网</li>
+					<li>关于我们</li>
+					<li>联系我们</li>
+					<li>广告服务</li>
+					<li>商家入驻</li>
+					<li>免费声明</li>
+				</ul>
+			</footer>
+		</div>
+		<script type="text/javascript">
+			var a=new Swiper('.swiper-container',{
+				loop:true,//重复播放
+
+				autoplay:1000,//自动轮播
+
+				autoplayDisableOnInteraction:false,//操作之后继续播放
+
+				speed:500,
+
+				pagination: '.swiper-pagination',//分页器（小圆点）
+
+				paginationClickable:true,//点击小圆点
+
+				nextButton:".swiper-button-next",
+
+				prevButton:".swiper-button-prev"
+			})
+			
+			$("nav li").click(function(){
+				$(this).addClass("bg");
+				
+				$(this).siblings().removeClass("bg");
+			})
+		</script>
+	</body>
+</html>
